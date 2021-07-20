@@ -1,0 +1,9 @@
+---
+
+- import_tasks: install_agent.yml
+  tags:
+    - install-agent
+
+- import_tasks: config_agent.yml
+  tags:
+    - config-agent

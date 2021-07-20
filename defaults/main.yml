@@ -1,0 +1,19 @@
+---
+
+# Name of the FireEye Agent package
+fireeye_agent_pkg: "xagt"
+
+# File system path where FireEye Agent is installed
+fireeye_agent_install_path: "/opt/fireeye"
+
+# File system path to the FireEye Agent executable
+fireeye_agent_exec: "{{ fireeye_agent_install_path }}/bin/xagt"
+
+# Directory containing the FireEye Agent config
+fireeye_agent_config_local_dir: "fireeye"
+
+# Name of the FireEye Agent configuration file
+fireeye_agent_config: "agent_config.json"
+
+# Vaulted Name of the FireEye Agent configuration file
+fireeye_agent_config_vault: "{{ fireeye_agent_config }}.vault"

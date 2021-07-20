@@ -1,0 +1,8 @@
+---
+
+- name: Install the FireEye Agent Package
+  yum:
+    name: "{{ fireeye_agent_pkg }}"
+    state: "latest"
+  notify: 
+    - Restart fireeye_agent

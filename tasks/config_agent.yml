@@ -1,0 +1,18 @@
+---
+
+- name: Copy FireEye Agent Config
+  copy:
+    src: "{{ fireeye_agent_config_local_dir }}/{{ fireeye_agent_config_vault }}"
+    dest: "{{ fireeye_agent_install_path }}/{{ fireeye_agent_config }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  register: copy_agent_config
+
+- name: Import Config into the FireEye Agent
+  command: >
+    {{ fireeye_agent_exec }} -i 
+    {{ fireeye_agent_install_path }}/{{ fireeye_agent_config }}
+  when: copy_agent_config.changed | bool
+  notify: 
+    - Restart fireeye_agent

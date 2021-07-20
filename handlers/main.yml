@@ -1,0 +1,6 @@
+---
+
+- name: Restart fireeye_agent
+  service:
+    name: "{{ fireeye_agent_pkg }}"
+    state: "restarted"
