@@ -5,4 +5,4 @@
     name: "{{ fireeye_agent_pkg }}"
     state: "latest"
   notify: 
-    - Restart fireeye_agent
+    - Restart fireeye agent
