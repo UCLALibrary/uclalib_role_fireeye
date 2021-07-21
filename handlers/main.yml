@@ -1,6 +1,11 @@
 ---
 
-- name: Restart fireeye_agent
+- name: Import fireeye config
+  command: >
+    {{ fireeye_agent_exec }} -i 
+    {{ fireeye_agent_install_path }}/{{ fireeye_agent_config }}
+
+- name: Restart fireeye agent
   service:
     name: "{{ fireeye_agent_pkg }}"
     state: "restarted"
