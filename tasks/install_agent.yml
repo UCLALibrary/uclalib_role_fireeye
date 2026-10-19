@@ -4,5 +4,6 @@
   yum:
     name: "{{ fireeye_agent_pkg }}"
     state: "latest"
+  ignore_errors: '{{ ansible_check_mode }}'
   notify: 
     - Restart fireeye agent
