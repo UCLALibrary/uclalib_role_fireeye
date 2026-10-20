@@ -9,3 +9,4 @@
   service:
     name: "{{ fireeye_agent_pkg }}"
     state: "restarted"
+  ignore_errors: '{{ ansible_check_mode }}'
